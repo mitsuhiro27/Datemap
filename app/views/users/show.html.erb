@@ -1,5 +1,27 @@
-<h1>マイページ</h1>
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
-<%= link_to "編集する", edit_user_registration_path(@user.id) %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-2"></div>  
+    <div class="col-md-8">
+      <h1 class="mb-4">マイページ</h1>
+      <h2>登録情報</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <tr>
+            <th class="table-info w-25">氏名</th> 
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th class="table-info">メールアドレス</th>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th class="table-info">プロフィール</th>
+            <td><%= @user.profile %></td>
+          </tr>
+        </table>
+      </div>
+      <%= link_to "編集する", edit_user_registration_path(@user.id), class: "btn btn-info mb-4" %>
+    </div>
+    <div class="col-md-2"></div>  
+  </div>
+</div>
