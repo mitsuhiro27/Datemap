@@ -1,6 +1,6 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
-    <h2 class="mt-1 mb-3">ログイン</h2>     
+    <h2 class="text-center mt-1 mb-3">ログイン</h2>     
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
         <%= f.label :email, "メールアドレス", :class => "form-label" %>
@@ -11,11 +11,13 @@
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "password", :class => "form-control" %>
       </div>
       <div class="mt-2">
-        <div class="actions">
+        <div class="actions text-center">
           <%= f.submit "ログイン", :class => "btn btn-primary btn-block" %>
         </div>
       </div>
     <% end %> 
-    <%= render "users/shared/links" %>
+    <div class="text-center mt-2">
+      <%= render "users/shared/links" %>
+    </div>  
   </div>
 </div>  
