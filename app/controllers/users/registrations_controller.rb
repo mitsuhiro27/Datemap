@@ -18,6 +18,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def edit
   #   super
   # end
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+  private
+  #ストロングパラメーター
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile, :user_image )
+  end
 
   # PUT /resource
   # def update
