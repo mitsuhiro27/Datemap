@@ -17,7 +17,7 @@ class UserImageUploader < CarrierWave::Uploader::Base
   def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   #ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-    'default.jpg'
+    '/images/kkrn_icon_user_11.png'
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
