@@ -7,4 +7,5 @@ class User < ApplicationRecord
   
   validates :name, presence: true
   validates :profile, length: { maximum: 200 }
+  validates :password, presence: true, on: :create
 end
