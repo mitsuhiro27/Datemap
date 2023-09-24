@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
   def edit
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: current_user.id)
   end
   private
   #ストロングパラメーター
