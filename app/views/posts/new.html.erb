@@ -1,0 +1,11 @@
+<%= form_with model: @post, local: true do |form| %>
+	<p><%= form.label :title %><br>
+		<%= form.text_field :title %> #titleの入力フォーム生成
+	</p>
+
+	<p><%= form.label :content %><br>
+		<%= form.text_area :content %> #bodyの入力フォーム生成
+	</p>
+	
+	<p><%= form.submit "送信"%> #送信ボタンを生成</p>
+<% end %>

@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <span>投稿者：</span><%= post.user.name %><br>
+  タイトル：<%= link_to post.title, "posts/#{post.id}" %><br>
+  内容：<%= post.content%><br>
+<% end %>
+<%= paginate @posts %>
