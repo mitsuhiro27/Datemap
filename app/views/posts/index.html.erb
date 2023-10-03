@@ -1,10 +1,20 @@
+<div class="card col-sm-6 mx-auto mt-5">
+  <div class="card-body">
+    <h3 class="text-center mt-1 mb-4">投稿一覧</h3>
+    <% @posts.each do |post| %>
+      <div class="border-top border-bottom">
+        <div class="ms-5 mt-3">
+          <%= image_tag current_user.user_image_url, class: "index_user_image"%>
+          <strong><%= post.user.name %></strong>
+          <%= l post.created_at, format: :short %><br>
+          <h4 class="card-title mt-3"><%= link_to post.title, "posts/#{post.id}", class: "post" %></h5>
+          <p class="card-text"><%= post.content%></p><br>
+          <%= image_tag post.post_image %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <% if user_signed_in? %>
-  <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
+  <%= button_to "投稿する", {controller: 'posts', action: 'new'}, {method: :get, class: 'btn btn-primary fixed_btn'} %>
 <% end %>
-
-<% @posts.each do |post| %>
-  <span>投稿者：</span><%= post.user.name %><br>
-  タイトル：<%= link_to post.title, "posts/#{post.id}" %><br>
-  内容：<%= post.content%><br>
-<% end %>
-<%= paginate @posts %>
