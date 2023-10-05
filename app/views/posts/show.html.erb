@@ -1,8 +1,13 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
     <h3 class="text-center mt-1 mb-4">投稿詳細</h3>
+		<%= image_tag @post.user.user_image_url, class: "index_user_image"%>
+    <strong><%= @post.user.name %></strong>
 		<h3 class="text-center"><%= @post.title %></h3>
 		<%= @post.content %>
-		<%= image_tag @post.post_image %>
+		<% if @post.post_image? %>
+			<%= image_tag @post.post_image_url %>
+		<% end %>
+		<%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '投稿を削除しますか？' } %>
 	</div>
 </div>

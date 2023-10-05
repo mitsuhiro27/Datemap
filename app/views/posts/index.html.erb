@@ -4,12 +4,14 @@
     <% @posts.each do |post| %>
       <div class="border-top border-bottom">
         <div class="ms-5 mt-3">
-          <%= image_tag current_user.user_image_url, class: "index_user_image"%>
+          <%= image_tag post.user.user_image_url, class: "index_user_image"%>
           <strong><%= post.user.name %></strong>
           <%= l post.created_at, format: :short %><br>
           <h4 class="card-title mt-3"><%= link_to post.title, "posts/#{post.id}", class: "post" %></h5>
           <p class="card-text"><%= post.content%></p><br>
-          <%= image_tag post.post_image %>
+          <% if post.post_image? %>
+            <%= image_tag post.post_image_url, class: "post_image" %>
+          <% end %>
         </div>
       </div>
     <% end %>
