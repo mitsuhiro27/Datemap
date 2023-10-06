@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_action :ensure_user, only: [:edit, :update, :destroy]
+
 	def new
     @post = Post.new
   end
@@ -28,12 +30,11 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(post_params)
-			redirect_to request.referer
+			redirect_to :action => "show"
 		else
-			render :show
+			render :edit
 		end
 	end
-
 
 	def destroy
   	@post = Post.find(params[:id])
@@ -44,5 +45,11 @@ class PostsController < ApplicationController
 	private
   def post_params
     params.require(:post).permit(:title, :content, :post_image, :user_id)
+  end
+
+	def ensure_user
+    @posts = current_user.posts
+    @post = @posts.find_by(id: params[:id])
+    redirect_to new_post_path unless @post
   end
 end

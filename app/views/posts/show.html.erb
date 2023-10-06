@@ -1,13 +1,25 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
     <h3 class="text-center mt-1 mb-4">投稿詳細</h3>
-		<%= image_tag @post.user.user_image_url, class: "index_user_image"%>
-    <strong><%= @post.user.name %></strong>
-		<h3 class="text-center"><%= @post.title %></h3>
-		<%= @post.content %>
-		<% if @post.post_image? %>
-			<%= image_tag @post.post_image_url %>
-		<% end %>
-		<%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '投稿を削除しますか？' } %>
+		<h3 class="text-center mt-5"><%= @post.title %></h3>
+		<div class="user_date text-center mt-3">
+			<%= image_tag @post.user.user_image_url, class: "index_user_image"%>
+			<strong><%= @post.user.name %></strong>
+			<%= l @post.created_at, format: :short %>
+		</div>
+		<div class="post_date text-center">
+			<%= @post.content %>
+		</div>
+		<div class="post_date_image text-center">
+			<% if @post.post_image? %>
+				<%= image_tag @post.post_image_url, class: "post_image_show" %>
+			<% end %>
+		</div>
+		<div class="btn_group mt-4">
+			<% if @post.user == current_user %>
+				<%= link_to "編集", edit_post_path(@post.id), class: "btn btn-primary" %>
+				<%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '投稿を削除しますか？' }, class: "btn btn-danger" %>
+			<% end %>
+		</div>
 	</div>
 </div>
