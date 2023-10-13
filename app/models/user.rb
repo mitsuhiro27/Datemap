@@ -9,5 +9,6 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 200 }
   validates :password, presence: true, on: :create
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
