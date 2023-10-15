@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   end
   resources :users, :only => [:show]
   resources :posts
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+ end
 end

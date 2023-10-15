@@ -21,5 +21,12 @@
 				<%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '投稿を削除しますか？' }, class: "btn btn-danger" %>
 			<% end %>
 		</div>
+		<div class="text-center">
+			<% if user_signed_in? %>
+				<%= render "favorites/btn", post: @post %>
+			<% else %>
+				<%= @post.favorites.count %><i class="bi bi-heart"></i>
+			<% end %>
+		</div>
 	</div>
 </div>
