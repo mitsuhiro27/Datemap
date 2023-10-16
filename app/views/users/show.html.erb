@@ -21,8 +21,11 @@
       </table>
     </div>
     <div class="text-center">
-      <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4" %>
-    </div>
-    <div class="col-md-2"></div>  
+      <% if current_user.email == 'guest@example.com'%>
+        <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4 disabled" %>
+      <% else %>
+        <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4" %>
+      <% end %>
+    </div>  
   </div>
 </div>
