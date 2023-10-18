@@ -97,6 +97,10 @@ GEM
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
     devise-i18n-views (0.3.7)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -255,6 +259,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  dotenv-rails
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
