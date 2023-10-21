@@ -61,3 +61,6 @@ gem 'devise-i18n-views'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
+gem 'dotenv-rails'
+gem "geocoder"
+gem 'rails-i18n'

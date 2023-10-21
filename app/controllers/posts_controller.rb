@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 	if @post.save
 	  redirect_to :action => "index"
 	else
-	  render "new"
+	  render "new", status: :unprocessable_entity
 	end
   end
 
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :post_image, :user_id)
+    params.require(:post).permit(:title, :content, :post_image, :user_id, :address, :latitude, :longitude)
   end
 
   def ensure_user
