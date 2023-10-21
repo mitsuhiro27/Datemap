@@ -7,4 +7,5 @@ class Post < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
+  validates :title, :content, :address, presence: true
 end
