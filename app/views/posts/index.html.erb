@@ -8,6 +8,11 @@
       <% if user_signed_in? %>
         <%= button_to "投稿する", {controller: 'posts', action: 'new'}, {method: :get, class: 'btn btn-primary '} %>
       <% end %>
+      <p>
+        <%= link_to '新着順', posts_path(latest: "true") %>
+        <%= link_to '古い順', posts_path(old: "true") %>
+        <%= link_to '人気順', posts_path(most_favorited: "true") %>
+      </p>
     </div>
     <% @posts.each do |post| %>
       <div class="border-top border-bottom">
