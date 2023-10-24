@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     elsif params[:most_favorited]
       @posts = Post.most_favorited
     else
-	    @posts = Post.all
+	    @posts = Post.all.order(created_at: :desc)
     end
   end
 

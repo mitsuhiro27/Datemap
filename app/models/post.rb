@@ -13,5 +13,5 @@ class Post < ApplicationRecord
   
   scope :latest, -> {order(created_at: :desc)}
   scope :old, -> {order(created_at: :asc)}
-  scope :most_favorited, -> {includes(favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}}
+  scope :most_favorited, -> {includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}}
 end
