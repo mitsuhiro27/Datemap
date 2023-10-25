@@ -64,3 +64,4 @@ gem 'kaminari'
 gem 'dotenv-rails'
 gem "geocoder"
 gem 'rails-i18n'
+gem 'ransack'

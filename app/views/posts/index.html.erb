@@ -6,8 +6,14 @@
     <h3 class="text-center mt-1">投稿一覧</h3>
     <div class="text-end mb-3">
       <% if user_signed_in? %>
-        <%= button_to "投稿する", {controller: 'posts', action: 'new'}, {method: :get, class: 'btn btn-primary '} %>
+        <%= button_to "投稿する", {controller: 'posts', action: 'new'}, {method: :get, class: 'btn btn-primary'} %>
       <% end %>
+      <div class="search text-center">
+        <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
+          <%= form.text_field :keyword %>
+          <%= form.submit "検索" %>
+        <% end %>
+      </div>
       <div class="sort text-center">
         <%= link_to_unless_current '新着順', posts_path(latest: "true")%>
         <%= link_to_unless_current '古い順', posts_path(old: "true"), class: "ms-2 me-2" %>

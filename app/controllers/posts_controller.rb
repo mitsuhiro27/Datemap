@@ -27,6 +27,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    if params[:keyword].present?
+      @posts = Post.where('address LIKE ?', "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      @posts = Post.all.order(created_at: :desc)
+    end
+  end
+
   def show
 	  @post = Post.find(params[:id])
   end
