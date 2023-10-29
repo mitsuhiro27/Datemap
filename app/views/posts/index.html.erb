@@ -9,15 +9,19 @@
         <%= button_to "投稿する", {controller: 'posts', action: 'new'}, {method: :get, class: 'btn btn-primary'} %>
       <% end %>
       <div class="search text-center">
-        <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
-          <%= form.text_field :keyword %>
+        <%= form_with url: posts_path, local: true, method: :get do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索" %>
           <%= form.submit "検索" %>
         <% end %>
       </div>
-      <div class="sort text-center">
-        <%= link_to_unless_current '新着順', posts_path(latest: "true")%>
-        <%= link_to_unless_current '古い順', posts_path(old: "true"), class: "ms-2 me-2" %>
-        <%= link_to_unless_current '人気順', posts_path(most_favorited: "true") %>
+      <div class="sort text-center mt-2">
+         <%if params[:keyword].blank? %>
+          <%= link_to_unless_current '新着順', posts_path(latest: "true")%>
+          <%= link_to_unless_current '古い順', posts_path(old: "true"), class: "ms-2 me-2" %>
+          <%= link_to_unless_current '人気順', posts_path(most_favorited: "true") %>
+        <% else %>
+          <h5>検索結果"<%= @posts.count %>件"</h5>
+        <% end %>
       </div>
     </div>
     <% @posts.each do |post| %>

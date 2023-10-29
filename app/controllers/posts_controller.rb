@@ -9,28 +9,22 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to :action => "index"
+      redirect_to posts_path(latest: "true")
     else
       render "new", status: :unprocessable_entity
     end
   end
 
   def index
-    if params[:latest]
+    if params[:keyword].present?
+      @posts = Post.where('address LIKE (?) or title LIKE(?) or content LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    elsif params[:latest]
       @posts = Post.latest
     elsif params[:old]
       @posts = Post.old
     elsif params[:most_favorited]
       @posts = Post.most_favorited
-    else
-	    @posts = Post.all.order(created_at: :desc)
-    end
-  end
-
-  def search
-    if params[:keyword].present?
-      @posts = Post.where('address LIKE ?', "%#{params[:keyword]}%")
-      @keyword = params[:keyword]
     else
       @posts = Post.all.order(created_at: :desc)
     end
