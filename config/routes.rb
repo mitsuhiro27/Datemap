@@ -6,8 +6,12 @@ Rails.application.routes.draw do
     get "users" => redirect("/users/sign_up")
   end
   resources :users, :only => [:show]
-  resources :posts
   resources :posts do
-    resource :favorites, only: [:create, :destroy]
+    collection do
+      get :search
+    end
+  end
+  resources :posts do
+    resource :favorites, only: [:create, :destroy,]
   end
 end
