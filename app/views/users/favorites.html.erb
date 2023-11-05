@@ -1,7 +1,7 @@
-<%= render partial: "users/shared/mypage", locals: {user: @user}%>
+<%= render partial: "users/shared/mypage", locals: {user: @user} %>
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
     <%= render partial: "users/shared/mypage_sort", locals: {user: @user} %>
-    <%= render partial: "shared/posts_index", collection: @posts, as: 'post' %>
+    <%= render partial: "shared/posts_index", collection: @favorite_posts, as: 'post' %>
   </div>
 </div>
