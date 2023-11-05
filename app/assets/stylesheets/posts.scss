@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .post {
   text-decoration: none;
-  color: black;
 }
 
 .post_image {
@@ -15,4 +14,8 @@
 .post_image_show {
   width: 75%;
   height: 100%;
+}
+
+.post_user {
+  text-decoration: none;
 }
