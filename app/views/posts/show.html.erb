@@ -3,7 +3,7 @@
 		<h2 class="text-center mt-5"><%= @post.title %></h2>
 		<div class="user_date text-center mt-3">
 			<%= image_tag @post.user.user_image_url, class: "index_user_image"%>
-			<strong><%= @post.user.name %></strong>
+			<strong><%=link_to @post.user.name, user_path(@post.user.id), class: "post_user" %></strong>
 			<%= l @post.created_at, format: :short %>
 		</div>
 		<div class="post_date text-center">
