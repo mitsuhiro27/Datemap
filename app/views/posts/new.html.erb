@@ -2,7 +2,7 @@
   <div class="card-body">
     <h3 class="text-center mt-1 mb-4">新規投稿</h3>
 		<%= form_with model: @post, local: true do |form| %>
-		<%= render 'shared/error_messages', model: form.object %>
+			<%= render 'shared/error_messages', model: form.object %>
 			<div class="form-group">
 				<%= form.label :タイトル %><br />
 				<%= form.text_field :title, class: "form-control" %>
