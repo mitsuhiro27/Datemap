@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path(latest: "true")
     else
@@ -55,12 +54,11 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :post_image, :user_id, :address, :latitude, :longitude)
+    params.require(:post).permit(:title, :content, :post_image, :address, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
   def ensure_user
-    @posts = current_user.posts
-    @post = @posts.find_by(id: params[:id])
+    @post = current_user.posts.find_by(id: params[:id])
     redirect_to new_post_path unless @post
   end
 end
