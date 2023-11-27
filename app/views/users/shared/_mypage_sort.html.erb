@@ -1,0 +1,4 @@
+<div class="mypage_sort text-center mb-3">
+  <%= link_to_unless_current "投稿", user_path(user.id),class: "my_posts me-3" %>
+  <%= link_to_unless_current "いいねした投稿", favorites_user_path(user), class: "my_favorite_posts ms-3" %>
+</div>

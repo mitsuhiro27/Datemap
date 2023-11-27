@@ -1,0 +1,30 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.top-page {
+  background-image: url("/images/erwan-hesry-T_j5U4ZcGO4-unsplash.jpg");
+  height: 600px;
+  background-size:cover;
+}
+
+.top-page-content {
+  color: aliceblue;
+  position: relative;
+  bottom: 30px;
+  font-size: 20px;
+}
+
+.top-logo {
+  position: relative;
+  height: 300px;
+  width: 500px;
+  @media screen and (max-width: 500px){
+    width: 300px;
+    height: 200px;
+  }
+}
+
+.top-guest {
+  position: relative;
+  bottom: 150px;
+}

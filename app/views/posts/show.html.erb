@@ -1,0 +1,34 @@
+<div class="card col-sm-6 mx-auto mt-5">
+  <div class="card-body">
+    <h2 class="text-center mt-5"><%= @post.title %></h2>
+    <div class="user_date text-center mt-3">
+      <%= image_tag @post.user.user_image_url, class: "index_user_image"%>
+      <strong><%=link_to @post.user.name, user_path(@post.user.id), class: "post_user" %></strong>
+      <%= l @post.created_at, format: :short %>
+    </div>
+    <div class="post_date text-center">
+      <%= @post.content %>
+    </div>
+    <div class="post_date_image text-center mt-3">
+      <% if @post.post_image? %>
+        <%= image_tag @post.post_image_url, class: "post_image_show" %>
+      <% end %>
+    </div>
+    <div class="mt-2">
+      <%= render "show_map" %>
+    </div>
+    <div class="btn_group text-center mt-4">
+      <% if @post.user == current_user %>
+        <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-primary" %>
+        <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '投稿を削除しますか？' }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+    <div class="text-center mt-3">
+      <% if user_signed_in? %>
+        <%= render "favorites/btn", post: @post %>
+      <% else %>
+        <%= @post.favorites.count %><i class="bi bi-heart"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card col-sm-6 mx-auto mt-5">
+  <div class="card-body">
+    <h2 class="text-center mt-1 mb-3">ログイン</h2>     
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, "メールアドレス", :class => "form-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :password, "パスワード", :class => "form-label" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", :class => "form-control" %>
+      </div>
+      <div class="mt-2">
+        <div class="actions text-center">
+          <%= f.submit "ログイン", :class => "btn btn-primary btn-block mb-4" %>
+        </div>
+      </div>
+    <% end %> 
+    <div class="text-center mt-2">
+      <%= render "users/shared/links" %>
+      <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %>
+    </div>
+  </div>
+</div>  
