@@ -1,0 +1,33 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.post {
+  text-decoration: none;
+}
+
+.post_image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.post_image_show {
+  width: 75%;
+  height: 100%;
+}
+
+.post_user {
+  text-decoration: none;
+}
+
+.posts_latest {
+  text-decoration: none;
+}
+
+.posts_old {
+  text-decoration: none;
+}
+
+.posts_favorite {
+  text-decoration: none;  
+}

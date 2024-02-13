@@ -1,0 +1,63 @@
+<div class="card col-sm-6 mx-auto mt-5">
+  <div class="card-body">
+    <h3 class="text-center mt-1 mb-4">マイページ</h3>
+    <div class="table-responsive">
+      <div class="text-center mb-4">
+        <%= image_tag user.user_image.url, class: "user_image" %>
+      </div>
+      <% if user_signed_in? %>
+        <% if current_user.id == user.id %>
+          <table class="table table-bordered">
+            <tr>
+              <th class="table-info w-25">氏名</th> 
+              <td><%= user.name %></td>
+            </tr>
+            <tr>
+              <th class="table-info">メールアドレス</th>
+              <td><%= user.email %></td>
+            </tr>
+            <tr>
+              <th class="table-info">プロフィール</th>
+              <td><%= user.profile %></td>
+            </tr>
+          </table>
+        <% else%>
+          <table class="table table-bordered">
+            <tr>
+              <th class="table-info w-25">氏名</th> 
+              <td><%= user.name %></td>
+            </tr>
+            <tr>
+              <th class="table-info">プロフィール</th>
+              <td><%= user.profile %></td>
+            </tr>
+          </table>
+        <% end %>
+      <% else %>
+        <table class="table table-bordered">
+            <tr>
+              <th class="table-info w-25">氏名</th> 
+              <td><%= user.name %></td>
+            </tr>
+            <tr>
+              <th class="table-info">プロフィール</th>
+              <td><%= user.profile %></td>
+            </tr>
+          </table>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <% if user_signed_in? %>
+        <% if current_user.email == 'guest@example.com'%>
+          <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4 disabled" %>
+        <% elsif current_user.id == @user.id%>
+          <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4" %>
+        <% else %>
+          <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4 disabled" %>
+        <% end %>
+      <% else %>
+        <%= link_to "編集する", edit_user_registration_path, class: "btn btn-primary mb-4 disabled" %>
+      <% end %>
+    </div>
+  </div>
+</div>  
