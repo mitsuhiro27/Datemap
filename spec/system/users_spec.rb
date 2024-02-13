@@ -12,6 +12,20 @@ RSpec.describe "users", type: :system do
             visit new_user_registration_path
             fill_in 'user_name', with: 'テスト'
             fill_in 'user_email', with: 'test@123.com'
+            attach_file "user_user_image", "app/assets/images/test.png"
+            fill_in 'user_password', with: 'password'
+            fill_in 'user_password_confirmation', with: 'password'
+            click_button '登録する'
+            expect(current_path).to eq user_path(1)
+          end
+        end
+        context '画像ファイルが未選択の場合' do
+          it 'ユーザーの新規作成が成功する' do
+            visit  new_user_session_path
+            expect(page).to have_content('新規登録')
+            visit new_user_registration_path
+            fill_in 'user_name', with: 'テスト'
+            fill_in 'user_email', with: 'test@123.com'
             fill_in 'user_password', with: 'password'
             fill_in 'user_password_confirmation', with: 'password'
             click_button '登録する'
