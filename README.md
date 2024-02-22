@@ -7,6 +7,9 @@
 
 Things you may want to cover:
 
+<img width="1435" alt="スクリーンショット 2024-02-20 13 36 12" src="https://github.com/mitsuhiro27/Datemap/assets/98004666/1ea328ee-df81-4a20-baad-0829b29d7348">
+
+
 * Ruby version
 
 * System dependencies
