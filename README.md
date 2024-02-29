@@ -10,14 +10,15 @@
 <img width="317" alt="スクリーンショット 2024-02-29 14 03 33" src="https://github.com/mitsuhiro27/Datemap/assets/98004666/7cc77eed-098c-4005-b262-030fe1d20009">
 
 # URL
-https://datemap-266611f05e8b.herokuapp.com
+https://datemap-266611f05e8b.herokuapp.com/
+
 画面中央のゲストログインボタンから、すぐにログイン頂けます。
 
 # 使用技術
 
-* System dependencies
+* Ruby 3.1.1
 
-* Configuration
+* Ruby on Rails  6.1.4
 
 * Database creation
 
