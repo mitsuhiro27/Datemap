@@ -17,10 +17,8 @@ https://datemap-266611f05e8b.herokuapp.com/
 # 使用技術
 
 * Ruby 3.1.1
-
 * Ruby on Rails  6.1.4
-
-* Database creation
+* sqlite　3.43.2
 
 * Database initialization
 
