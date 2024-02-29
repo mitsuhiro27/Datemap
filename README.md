@@ -19,10 +19,8 @@ https://datemap-266611f05e8b.herokuapp.com/
 * Ruby 3.1.1
 * Ruby on Rails  6.1.4
 * sqlite　3.43.2
-
-* Database initialization
-
-* How to run the test suite
+* RSpec
+* Google Maps API
 
 * Services (job queues, cache servers, search engines, etc.)
 
