@@ -11,6 +11,10 @@
 
 # URL
 https://datemap-266611f05e8b.herokuapp.com/
+画面中央のゲストログインボタンから、すぐにログイン頂けます。
+
+# 使用技術
+
 * System dependencies
 
 * Configuration
