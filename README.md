@@ -6,6 +6,7 @@
 
 
 <img width="1435" alt="スクリーンショット 2024-02-20 13 36 12" src="https://github.com/mitsuhiro27/Datemap/assets/98004666/1ea328ee-df81-4a20-baad-0829b29d7348">
+<img width="1436" alt="スクリーンショット 2024-02-29 13 40 01" src="https://github.com/mitsuhiro27/Datemap/assets/98004666/8f067bcb-dff0-4a1b-aa32-019127faa900">
 <img width="1436" alt="スクリーンショット 2024-02-29 13 39 36" src="https://github.com/mitsuhiro27/Datemap/assets/98004666/7e383794-c968-4897-88cf-ca4cab87dbda">
 
 
