@@ -23,7 +23,7 @@ https://datemap-266611f05e8b.herokuapp.com/
 * Google Maps API
 
 # 機能一覧
-ユーザー登録、ログイン機能(devise)
-投稿機能
+*ユーザー登録、ログイン機能(devise)
+*投稿機能
 　　画像投稿(refile)
 　　位置情報検索機能(geocoder)
