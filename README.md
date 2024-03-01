@@ -32,6 +32,6 @@ https://datemap-266611f05e8b.herokuapp.com/
 * 投稿検索機能
 
 # テスト
-*Rspec
+* Rspec
   - 単体テスト(model)
   - 統合テスト(system)
