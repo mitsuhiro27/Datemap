@@ -25,7 +25,7 @@ https://datemap-266611f05e8b.herokuapp.com/
 # 機能一覧
 * ユーザー登録、ログイン機能(devise)
 * 投稿機能
-　　画像投稿(carrierwave)
+　**　画像投稿(carrierwave)**
 　　位置情報検索機能(geocoder)
 * いいね機能
   ランキング機能
